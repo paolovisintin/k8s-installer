@@ -2,7 +2,7 @@
 
 set -e
 
-apt-get -qq install debhelper -t xenial-backports \
+apt-get -qq install debhelper -t bionic-backports \
  && apt-get -qq --no-install-recommends install \
     build-essential \
     net-tools \
