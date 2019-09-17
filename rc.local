@@ -11,4 +11,5 @@
 #
 # By default this script does nothing.
 /root/k8s-installer/start-vxlan.sh
+modprobe xt_RTPENGINE
 exit 0
