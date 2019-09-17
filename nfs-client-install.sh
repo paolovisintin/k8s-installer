@@ -1,4 +1,6 @@
 #!/bin/bash
+mkdir /nfs
+apt-get install -qq -y nfs-common
 K=/usr/bin/kubectl
 export KUBECONFIG=/etc/kubernetes/admin.conf
 NFS_SERVER=$($K get nodes --no-headers -o wide -o custom-columns=INTERNAL-IP:.status.addresses[0].address | head -n 1 )
