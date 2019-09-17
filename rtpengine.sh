@@ -51,10 +51,10 @@ apt-get -qq install debhelper -t bionic-backports \
     gperf \
     linux-headers-`uname -r` \
  && cd /src \
- && curl -O https://deb.sipwise.com/spce/mr6.3.1/pool/main/b/bcg729/libbcg729-0_1.0.4+git20180222-0.1~bpo9+1_amd64.deb \
- && curl -O https://deb.sipwise.com/spce/mr6.3.1/pool/main/b/bcg729/libbcg729-dev_1.0.4+git20180222-0.1~bpo9+1_amd64.deb \
- && dpkg -i libbcg729-0_1.0.4+git20180222-0.1~bpo9+1_amd64.deb \
- && dpkg -i libbcg729-dev_1.0.4+git20180222-0.1~bpo9+1_amd64.deb \
+#  && curl -O https://deb.sipwise.com/spce/mr6.3.1/pool/main/b/bcg729/libbcg729-0_1.0.4+git20180222-0.1~bpo9+1_amd64.deb \
+#  && curl -O https://deb.sipwise.com/spce/mr6.3.1/pool/main/b/bcg729/libbcg729-dev_1.0.4+git20180222-0.1~bpo9+1_amd64.deb \
+#  && dpkg -i libbcg729-0_1.0.4+git20180222-0.1~bpo9+1_amd64.deb \
+#  && dpkg -i libbcg729-dev_1.0.4+git20180222-0.1~bpo9+1_amd64.deb \
  && cd /src/rtpengine/ \
  && perl -p -i -e 's/default-libmysqlclient-dev/libmysqlclient-dev/g' debian/control \
  && perl -p -i -e 's/libiptc-dev/libiptcdata0-dev/g' debian/control \
