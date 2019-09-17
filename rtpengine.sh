@@ -50,6 +50,7 @@ apt-get -qq install debhelper -t bionic-backports \
     libsystemd-dev \
     gperf \
     linux-headers-`uname -r` \
+ && cd /src/rtpengine/ \
  && perl -p -i -e 's/default-libmysqlclient-dev/libmysqlclient-dev/g' debian/control \
  && perl -p -i -e 's/libiptc-dev/libiptcdata0-dev/g' debian/control \
  && dpkg-buildpackage \
