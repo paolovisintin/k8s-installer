@@ -48,6 +48,7 @@ apt-get -qq install debhelper -t bionic-backports \
     libsocket6-perl \
     module-assistant \
     libsystemd-dev \
+    gperf \
     linux-headers-`uname -r` \
  && cd /src \
  && curl -O https://deb.sipwise.com/spce/mr6.3.1/pool/main/b/bcg729/libbcg729-0_1.0.4+git20180222-0.1~bpo9+1_amd64.deb \
