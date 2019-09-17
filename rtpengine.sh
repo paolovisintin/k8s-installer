@@ -14,8 +14,7 @@ apt-get -qq install debhelper -t bionic-backports \
  && rm -Rf /src/rtpengine.zip \
  && rm -Rf /src/rtpengine \
  && mkdir -p /src \
- && curl -Lk http://files.cloud.evox.it/rtpengine/rtpengine-aaf8cbd.zip -o /src/rtpengine.zip \
- && unzip /src/rtpengine.zip -d /src/ \
+ && unzip rtpengine/rtpengine.zip -d /src/ \
  && mv /src/rtpengine-master/ /src/rtpengine/ \
  && apt-get -qq --no-install-recommends install \
     dkms \
