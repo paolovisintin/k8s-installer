@@ -58,7 +58,7 @@ apt-get -qq install debhelper -t bionic-backports \
  && cd /src/rtpengine/ \
  && perl -p -i -e 's/default-libmysqlclient-dev/libmysqlclient-dev/g' debian/control \
  && perl -p -i -e 's/libiptc-dev/libiptcdata0-dev/g' debian/control \
- && dpkg-buildpackage \
+ && dpkg-buildpackage -uc -us \
  && cd /src \
  && dpkg -i ngcp-rtpengine-daemon_7.1.0.0+0~mr7.1.0.0_amd64.deb \
     ngcp-rtpengine-iptables_7.1.0.0+0~mr7.1.0.0_amd64.deb \
