@@ -1,5 +1,10 @@
 #!/bin/bash
 
+
+# TODO ? 
+#override_dh_shlibdeps:
+#        dh_shlibdeps --dpkg-shlibdeps-params=--ignore-missing-info
+# in debian/rules ? 
 set -e
 cd /tmp/
 rm -rf rtpengine
@@ -7,6 +12,10 @@ mkdir -p rtpengine
 cd rtpengine
 wget https://github.com/paolovisintin/k8s-installer/raw/master/rtpengine/rtpengine.zip
 cd ..
+git clone https://github.com/ossobv/bcg729-deb.git
+cd /tmp/bcg729-deb
+./Docker.build
+find ./Docker.out/ -name "*.deb" | xargs dpkg -i
 apt-get -qq install debhelper -t bionic-backports \
  && apt-get -qq --no-install-recommends install \
     build-essential \
@@ -58,6 +67,7 @@ apt-get -qq install debhelper -t bionic-backports \
  && cd /src/rtpengine/ \
  && perl -p -i -e 's/default-libmysqlclient-dev/libmysqlclient-dev/g' debian/control \
  && perl -p -i -e 's/libiptc-dev/libiptcdata0-dev/g' debian/control \
+ && cd debian && wget 
  && dpkg-buildpackage -uc -us \
  && cd /src \
  && dpkg -i ngcp-rtpengine-daemon_7.1.0.0+0~mr7.1.0.0_amd64.deb \
