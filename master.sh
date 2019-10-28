@@ -15,5 +15,7 @@ ufw allow from 178.250.64.42
 ufw allow from 176.9.103.215
 ufw allow from 176.9.127.107
 ufw allow from 78.46.37.142
+ufw allow from 172.16.0.0/16
+ufw allow from 172.18.0.0/16
 ufw enable
 
