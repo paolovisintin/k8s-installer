@@ -1,7 +1,11 @@
 #!/bin/bash
 
 set -e
-
+cd /tmp/
+mkdir rtpengine
+cd rtpengine
+wget https://github.com/paolovisintin/k8s-installer/raw/master/rtpengine/rtpengine.zip
+cd ..
 apt-get -qq install debhelper -t bionic-backports \
  && apt-get -qq --no-install-recommends install \
     build-essential \
