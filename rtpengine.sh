@@ -2,7 +2,8 @@
 
 set -e
 cd /tmp/
-mkdir rtpengine
+rm -rf rtpengine
+mkdir -p rtpengine
 cd rtpengine
 wget https://github.com/paolovisintin/k8s-installer/raw/master/rtpengine/rtpengine.zip
 cd ..
